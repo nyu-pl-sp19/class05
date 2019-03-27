@@ -1057,10 +1057,9 @@ We can thus write the definition of `sum_of_list` even more compactly
 like this:
 
 ```ocaml
-let rec sum_of_list l = 
-  match l with
+let rec sum_of_list = function
   | [] -> 0
-  | hd :: tl -> hd + sum_of_list tl
+  | x :: xs -> x + sum_of_list xs
 ```
 
 Note that we can also write functions that work on polymorphic lists. 
